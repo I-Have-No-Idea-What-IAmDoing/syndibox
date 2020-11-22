@@ -184,7 +184,7 @@ func _ready(): # Called when ready.
 		if ResourceLoader.exists(f):
 			alt_fonts.push_back(load(f))
 		else:
-			# This is so that the array corospond to the tag even if there is null values
+			# This is so that the array correspond to the tag even if there is null values
 			alt_fonts.push_back(null)
 	font = def_font
 	def_color = COLOR
@@ -536,6 +536,7 @@ func speed_check(string):
 		string.erase(step,emph.length())
 		string = string.insert(step,char(8203))
 		if !INSTANT_PRINT:
+			# Check if using a custom speed
 			if emph[2] == "*":
 				speed = float(emph.substr(3,emph.length()))
 			match emph:
